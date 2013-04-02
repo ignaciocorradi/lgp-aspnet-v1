@@ -1,0 +1,281 @@
+﻿<#
+//*********************************************************
+//
+//    Copyright (c) Microsoft. All rights reserved.
+//    This code is licensed under the Microsoft Public License.
+//    THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+//    ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+//    IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+//    PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+#>
+<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#><#@
+ output extension=".cs"#><#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+string prefijoDto = "";
+string baseClass = "EntityObject";
+
+
+string inputFile = @"..\ModeloDatos.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = "AppGest.Datos.Persistencia";
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+// Write out support code to primary template output file
+WriteHeader(fileManager);
+BeginNamespace(namespaceName, code);
+WriteCustomObservableCollection();
+EndNamespace(namespaceName);
+
+Dictionary<string, string> typeMapping = new Dictionary<string, string>();
+
+// Entidades del archivo EDMF
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{ // 1
+    // Creación del Archivo
+    fileManager.StartNewFile("Extensiones." + entity.Name + ".Relaciones.cs");
+
+    // Inicio espacio de nombres
+    BeginNamespace(namespaceName, code);
+
+
+        string carga= string.Empty;
+        string llenado= string.Empty;
+#>
+
+<#=
+
+        // Declaración de la clase.
+        Accessibility.ForType(entity)#> <#=code.SpaceAfter(code.AbstractOption(entity))#>partial class <#=prefijoDto#><#=code.Escape(entity)#><#            
+        
+        typeMapping.Add(prefijoDto + code.Escape(entity), code.Escape(entity));
+        var tbase = entity.BaseType == null ? baseClass: entity.BaseType.Name;
+        var tipo = code.StringBefore(" : ", prefijoDto + tbase);
+
+#><#= tipo #>
+{
+
+<#
+    region.Begin("Composiciones");
+#>
+<#
+    foreach (NavigationProperty navProperty in entity.NavigationProperties.Where(np => np.DeclaringType == entity))
+    { // 3
+#>
+<#
+        if (navProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.Many && navProperty.FromEndMember.DeleteBehavior == OperationAction.Cascade)
+        {
+            carga += "\r\n\t\t" + code.FieldName(navProperty) + " = CargarListaDto<" + prefijoDto + navProperty.ToEndMember.GetEntityType().Name + ", " + navProperty.ToEndMember.GetEntityType().Name + ">(entidad." + navProperty.Name + ");";
+
+#>
+    <#=PropertyVirtualModifier(Accessibility.ForReadOnlyProperty(navProperty))#> ICollection<<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#>> Get<#=                    code.Escape(navProperty)#>()
+    {
+        return <#=                    code.FieldName(navProperty)#>;
+    }   
+    private List<<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#>> <#=code.FieldName(navProperty)#> = new List<<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#>>();
+
+    <#=PropertyVirtualModifier(Accessibility.ForReadOnlyProperty(navProperty))#> void AgregarEn<#=code.Escape(navProperty)#>(<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#> item)
+    {
+        <#=code.FieldName(navProperty)#>.Add(item);
+    }
+    <#=                        PropertyVirtualModifier(Accessibility.ForReadOnlyProperty(navProperty))#> <#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#> GetItemDe<#=code.Escape(navProperty)#>(System.Guid idItem)
+    {
+        var item = <#=code.FieldName(navProperty)#>.Find(i => i.Id == idItem);
+        return item;
+    }   
+
+    <#=PropertyVirtualModifier(Accessibility.ForReadOnlyProperty(navProperty))#> void QuitarDe<#=code.Escape(navProperty)#>(<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#> item)
+    {
+        <#=code.FieldName(navProperty)#>.Remove(item);
+
+        if (item.Id != System.Guid.Empty)
+            <#=code.FieldName(navProperty)#>Elim.Add(item);
+
+    }   
+
+    <#=                        PropertyVirtualModifier(Accessibility.ForReadOnlyProperty(navProperty))#> void QuitarDe<#=code.Escape(navProperty)#>(System.Guid idItem)
+    {
+        var item = <#=code.FieldName(navProperty)#>.Find(i => i.Id == idItem);
+        if (item != null)
+            QuitarDe<#=code.Escape(navProperty)#>(item);    
+    }   
+
+    <#=PropertyVirtualModifier(Accessibility.ForReadOnlyProperty(navProperty))#> ICollection<<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#>> Get<#=                    code.Escape(navProperty)#>Elim()
+    {
+        return <#=                    code.FieldName(navProperty)#>Elim;
+    }   
+    private List<<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#>> <#=code.FieldName(navProperty)#>Elim = new List<<#=prefijoDto#><#=code.Escape(navProperty.ToEndMember.GetEntityType())#>>();
+
+    <#
+            }
+            else if ((navProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.ZeroOrOne || navProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.One) && navProperty.FromEndMember.DeleteBehavior == OperationAction.Cascade)
+            {
+                carga += "\r\n\t\t" + code.FieldName(navProperty) + " = CargarDto<" + prefijoDto + navProperty.ToEndMember.GetEntityType().Name + ", " + navProperty.ToEndMember.GetEntityType().Name + ">(entidad." + navProperty.Name + ");";
+
+    #>
+    <#=                    PropertyVirtualModifier(Accessibility.ForProperty(navProperty))#> <#=prefijoDto#><#=code.Escape(navProperty.TypeUsage)#> <#=code.Escape(navProperty)#>
+    {
+
+        <#=                    code.SpaceAfter(Accessibility.ForGetter(navProperty))#> get;
+        <#=                    code.SpaceAfter(Accessibility.ForSetter(navProperty))#> set;
+    }
+
+    <#
+            }
+
+    } // 3
+
+#>
+
+<#
+    region.End();
+#>
+
+<#
+    region.Begin("Agregaciones");
+#>
+
+<#
+    foreach (NavigationProperty navProperty in entity.NavigationProperties.Where(np => np.DeclaringType == entity))
+    { // 3
+
+        if (navProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.ZeroOrOne || navProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.One)
+            {
+                carga += "\r\n\t\t" + navProperty.Name + " = entidad." + navProperty.Name + ";";
+                llenado += "\r\n\t\t entidad." + code.Escape(navProperty) + " = " + code.Escape(navProperty) + ";";
+
+#>
+    /// <summary>
+    /// Establece el objeto asociado a la propiedad '<#= code.Escape(navProperty.Name) #>' de esta instancia, teniendo en cuena
+    /// si se se debe hacer por instancia (propiedad '<#= code.Escape(navProperty.Name) #>') o por referencia (propiedad '<#= code.Escape(navProperty.Name) #>Reference').
+    /// </summary>
+    /// <param name="nuevo">Entidad a asociar</param>
+    /// <param name="forzarPorInstancia">(Opcional) Fuerza el seteo por referencia.</param>
+    <#=                    PropertyVirtualModifier(Accessibility.ForProperty(navProperty))#> void Set<#= code.Escape(navProperty.Name) #>(<#= code.Escape(navProperty.TypeUsage)#> nuevo, bool forzarPorInstancia = false)
+    {
+        this.SetRelacion("<#= code.Escape(navProperty.Name) #>", "<#= code.Escape(navProperty.Name) #>Reference", nuevo, forzarPorInstancia);
+    }
+
+<#
+            }
+    }
+#>
+<#
+    region.End();
+#>
+
+}
+<#
+EndNamespace(namespaceName);
+} // 1
+fileManager.StartNewFile(prefijoDto + baseClass + ".Mappings.cs");
+#>
+<#
+fileManager.Process();
+ #>
+
+
+
+<#+
+void WriteHeader(EntityFrameworkTemplateFileManager fileManager, params string[] extraUsings)
+{
+    fileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated from a template.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Data.Objects.DataClasses;
+
+<#=String.Join(String.Empty, extraUsings.Select(u => "using " + u + ";" + Environment.NewLine).ToArray())#>
+<#+
+    fileManager.EndBlock();
+}
+
+void BeginNamespace(string namespaceName, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+#>
+namespace <#=code.EscapeNamespace(namespaceName)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+
+void EndNamespace(string namespaceName)
+{
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+bool IsReadWriteAccessibleProperty(EdmMember member)
+{
+    string setter = Accessibility.ForWriteOnlyProperty(member);
+    string getter = Accessibility.ForReadOnlyProperty(member);
+
+    return getter != "private" && getter != "protected" && setter != "private" && setter != "protected";
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+void WriteCustomObservableCollection()
+{
+#>
+
+<#+
+}
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    Dictionary<string, bool> alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(StructuralType type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+
+    }
+
+    return true;
+}
+#>

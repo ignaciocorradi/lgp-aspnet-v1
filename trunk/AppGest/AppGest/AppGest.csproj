@@ -1,0 +1,1092 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88AC61E1-24F4-4EA5-BB92-6B115E967830}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppGest</RootNamespace>
+    <AssemblyName>AppGest</AssemblyName>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <DeployIisAppPath>LGP</DeployIisAppPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Client, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=0fb8f99bd6cd7e23, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Gizmox\Visual WebGUI\SDK 4.0\Assemblies\Gizmox.WebGUI.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=ea5dfe57c8eb7edd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Gizmox\Visual WebGUI\SDK 4.0\Assemblies\Gizmox.WebGUI.Common.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common.Design.Skins, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=82814e180535b402, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Gizmox\Visual WebGUI\SDK 4.0\Assemblies\Gizmox.WebGUI.Common.Design.Skins.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=dd2a1fd4d120c769, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Gizmox\Visual WebGUI\SDK 4.0\Assemblies\Gizmox.WebGUI.Forms.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.0.5701.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ControlBase\ButtonSkin.Button.css" />
+    <Content Include="ControlBase\ButtonSkin.Button.xslt" />
+    <Content Include="ControlBase\LabelSkin.Label.css" />
+    <Content Include="ControlBase\LabelSkin.Label.xslt" />
+    <Content Include="ControlBase\TextBoxSkin.TextBox.css" />
+    <Content Include="ControlBase\TextBoxSkin.TextBox.xslt" />
+    <Content Include="Global.asax" />
+    <Content Include="Resources\Icons\favicon.ico" />
+    <Content Include="Resources\Icons\logo4r48.ico" />
+    <Content Include="Resources\Images\128\Auto.png" />
+    <Content Include="Resources\Images\128\Auto_editar1.png" />
+    <Content Include="Resources\Images\128\Auto_nuevo.png" />
+    <Content Include="Resources\Images\128\banco.png" />
+    <Content Include="Resources\Images\128\banco_alta.png" />
+    <Content Include="Resources\Images\128\banco_baja.png" />
+    <Content Include="Resources\Images\128\banco_editar.png" />
+    <Content Include="Resources\Images\128\banco_precios.png" />
+    <Content Include="Resources\Images\128\clientes.png" />
+    <Content Include="Resources\Images\128\Clientes_baja.png" />
+    <Content Include="Resources\Images\128\clientes_editar.png" />
+    <Content Include="Resources\Images\128\Clientes_eliminar.png" />
+    <Content Include="Resources\Images\128\clientes_nuevo.png" />
+    <Content Include="Resources\Images\128\cobro_ingresos.png" />
+    <Content Include="Resources\Images\128\cobro_ingresos_edicion.png" />
+    <Content Include="Resources\Images\128\Cochera.png" />
+    <Content Include="Resources\Images\128\Cochera_baja.png" />
+    <Content Include="Resources\Images\128\Cochera_editar.png" />
+    <Content Include="Resources\Images\128\Cochera_nuevo.png" />
+    <Content Include="Resources\Images\128\cptos_gastos_empleado.png" />
+    <Content Include="Resources\Images\128\editar_pago.png" />
+    <Content Include="Resources\Images\128\Editar_Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\128\empleado.png" />
+    <Content Include="Resources\Images\128\Empleados.png" />
+    <Content Include="Resources\Images\128\empleado_editar.png" />
+    <Content Include="Resources\Images\128\exit.png" />
+    <Content Include="Resources\Images\128\Factura.png" />
+    <Content Include="Resources\Images\128\file_search.png" />
+    <Content Include="Resources\Images\128\garage_editar.png" />
+    <Content Include="Resources\Images\128\informe.png" />
+    <Content Include="Resources\Images\128\Keys.png" />
+    <Content Include="Resources\Images\128\mensual.png" />
+    <Content Include="Resources\Images\128\mensual_alta.png" />
+    <Content Include="Resources\Images\128\mensual_editar.png" />
+    <Content Include="Resources\Images\128\Nuevo_Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\128\ok.png" />
+    <Content Include="Resources\Images\128\Pago_egresos.png" />
+    <Content Include="Resources\Images\128\Pago_egresos_edicion.png" />
+    <Content Include="Resources\Images\128\pago_empleados.png" />
+    <Content Include="Resources\Images\128\Quitar_muchos_Cliente.png" />
+    <Content Include="Resources\Images\128\Quitar_un_Cliente.png" />
+    <Content Include="Resources\Images\128\reporte_CobroMensuales.png" />
+    <Content Include="Resources\Images\128\reporte_plata_grafico.png" />
+    <Content Include="Resources\Images\128\rpt_ClientesMensuales.png" />
+    <Content Include="Resources\Images\128\rpt_listadoEmpleados.png" />
+    <Content Include="Resources\Images\128\rpt_Mensuales.png" />
+    <Content Include="Resources\Images\128\Select_muchos_Cliente.png" />
+    <Content Include="Resources\Images\128\Select_un_Cliente.png" />
+    <Content Include="Resources\Images\128\Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\128\Serv_Ingresos_Precios.png" />
+    <Content Include="Resources\Images\128\sueldo_por_empleado.png" />
+    <Content Include="Resources\Images\128\usuario.png" />
+    <Content Include="Resources\Images\16\Auto.png" />
+    <Content Include="Resources\Images\16\banco_alta.png" />
+    <Content Include="Resources\Images\16\cancelar_bn.png" />
+    <Content Include="Resources\Images\16\clientes.png" />
+    <Content Include="Resources\Images\16\customers.png" />
+    <Content Include="Resources\Images\16\dardealta.png" />
+    <Content Include="Resources\Images\16\dardebaja.png" />
+    <Content Include="Resources\Images\16\dardebaja1.png" />
+    <Content Include="Resources\Images\16\editar.png" />
+    <Content Include="Resources\Images\16\eliminar.png" />
+    <Content Include="Resources\Images\16\empleado.png" />
+    <Content Include="Resources\Images\16\Empleados.png" />
+    <Content Include="Resources\Images\16\empleado_editar.png" />
+    <Content Include="Resources\Images\16\exit.png" />
+    <Content Include="Resources\Images\16\file_search.png" />
+    <Content Include="Resources\Images\16\flecha_roja_abajo.png" />
+    <Content Include="Resources\Images\16\flecha_Verde_arriba.png" />
+    <Content Include="Resources\Images\16\Keys.png" />
+    <Content Include="Resources\Images\16\logo4r.png" />
+    <Content Include="Resources\Images\16\mensual_editar.png" />
+    <Content Include="Resources\Images\16\nuevo.png" />
+    <Content Include="Resources\Images\16\Nuevo_Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\16\ok.png" />
+    <Content Include="Resources\Images\16\Pago_egresos.png" />
+    <Content Include="Resources\Images\16\quitar.png" />
+    <Content Include="Resources\Images\16\savebn.png" />
+    <Content Include="Resources\Images\16\Select_un_Cliente.png" />
+    <Content Include="Resources\Images\16\Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\16\usuario.png" />
+    <Content Include="Resources\Images\32\Auto.png" />
+    <Content Include="Resources\Images\32\Auto_editar.png" />
+    <Content Include="Resources\Images\32\Auto_nuevo.png" />
+    <Content Include="Resources\Images\32\banco_alta.png" />
+    <Content Include="Resources\Images\32\banco_baja.png" />
+    <Content Include="Resources\Images\32\banco_editar.png" />
+    <Content Include="Resources\Images\32\banco_precios.png" />
+    <Content Include="Resources\Images\32\cancelar_bn.png" />
+    <Content Include="Resources\Images\32\cerrar_sistema.png" />
+    <Content Include="Resources\Images\32\clientes.png" />
+    <Content Include="Resources\Images\32\Clientes_baja.png" />
+    <Content Include="Resources\Images\32\clientes_editar.png" />
+    <Content Include="Resources\Images\32\clientes_nuevo.png" />
+    <Content Include="Resources\Images\32\cobro_ingresos.png" />
+    <Content Include="Resources\Images\32\cobro_ingresos_edicion.png" />
+    <Content Include="Resources\Images\32\Cochera.png" />
+    <Content Include="Resources\Images\32\Cochera_baja.png" />
+    <Content Include="Resources\Images\32\Cochera_editar.png" />
+    <Content Include="Resources\Images\32\Cochera_nuevo.png" />
+    <Content Include="Resources\Images\32\cptos_gastos_empleado.png" />
+    <Content Include="Resources\Images\32\editar_cptos_gastos_empleado.png" />
+    <Content Include="Resources\Images\32\editar_pago.png" />
+    <Content Include="Resources\Images\32\editar_precio_gasto-empleado.png" />
+    <Content Include="Resources\Images\32\Editar_Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\32\empleado.png" />
+    <Content Include="Resources\Images\32\Empleados.png" />
+    <Content Include="Resources\Images\32\empleado_editar.png" />
+    <Content Include="Resources\Images\32\empleado_nuevo.png" />
+    <Content Include="Resources\Images\32\exit.png" />
+    <Content Include="Resources\Images\32\Factura.png" />
+    <Content Include="Resources\Images\32\file_search.png" />
+    <Content Include="Resources\Images\32\garage_editar.png" />
+    <Content Include="Resources\Images\32\garage_nuevo.png" />
+    <Content Include="Resources\Images\32\informe.png" />
+    <Content Include="Resources\Images\32\Keys.png" />
+    <Content Include="Resources\Images\32\logo4r.png" />
+    <Content Include="Resources\Images\32\mensual.png" />
+    <Content Include="Resources\Images\32\mensual_alta.png" />
+    <Content Include="Resources\Images\32\mensual_editar.png" />
+    <Content Include="Resources\Images\32\nuevo.png" />
+    <Content Include="Resources\Images\32\Nuevo_Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\32\ok.png" />
+    <Content Include="Resources\Images\32\pagos.png" />
+    <Content Include="Resources\Images\32\Pago_egresos.png" />
+    <Content Include="Resources\Images\32\Pago_egresos_edicion.png" />
+    <Content Include="Resources\Images\32\pago_empleados.png" />
+    <Content Include="Resources\Images\32\Quitar_muchos_Cliente.png" />
+    <Content Include="Resources\Images\32\Quitar_un_Cliente.png" />
+    <Content Include="Resources\Images\32\reporte_CobroMensuales.png" />
+    <Content Include="Resources\Images\32\reporte_plata_grafico.png" />
+    <Content Include="Resources\Images\32\rpt_ClientesMensuales.png" />
+    <Content Include="Resources\Images\32\rpt_listadoEmpleados.png" />
+    <Content Include="Resources\Images\32\rpt_Mensuales.png" />
+    <Content Include="Resources\Images\32\save.png" />
+    <Content Include="Resources\Images\32\savebn.png" />
+    <Content Include="Resources\Images\32\Select_muchos_Cliente.png" />
+    <Content Include="Resources\Images\32\Select_un_Cliente.png" />
+    <Content Include="Resources\Images\32\Servicio_editar.png" />
+    <Content Include="Resources\Images\32\Servicio_gasto.png" />
+    <Content Include="Resources\Images\32\Servicio_informacion.png" />
+    <Content Include="Resources\Images\32\Servicio_ingreso.png" />
+    <Content Include="Resources\Images\32\Servicio_listar.png" />
+    <Content Include="Resources\Images\32\Servicio_nuevo.png" />
+    <Content Include="Resources\Images\32\Serv_Ingresos2.png" />
+    <Content Include="Resources\Images\32\Serv_Ingresos_Precios.png" />
+    <Content Include="Resources\Images\32\sueldo_por_empleado.png" />
+    <Content Include="Resources\Images\32\usuario.png" />
+    <Content Include="Resources\Images\customers16.png" />
+    <Content Include="Resources\Images\Entidad-list16.png" />
+    <Content Include="Resources\Images\exit.png" />
+    <Content Include="Resources\Images\exit16.png" />
+    <Content Include="Resources\Images\fondo_ppal.png" />
+    <Content Include="Resources\Images\Keys128.png" />
+    <Content Include="Resources\Images\login_Fondo.png" />
+    <Content Include="Resources\Images\login_Fondo2.png" />
+    <Content Include="Resources\Images\login_Fondo_ligth.png" />
+    <Content Include="Resources\Images\login_Fondo_ligth_gris.png" />
+    <Content Include="Resources\Images\Logo16.png" />
+    <Content Include="Resources\Images\logo4r48.ico" />
+    <Content Include="Resources\Images\Logo60x59.png" />
+    <Content Include="Resources\Images\ok16.png" />
+    <None Include="Service References\RSReference\AppGest.RSReference.DocumentMapNode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RSReference\AppGest.RSReference.ExecutionHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RSReference\AppGest.RSReference.ExecutionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RSReference\AppGest.RSReference.ExecutionInfo2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RSReference\AppGest.RSReference.Extension.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RSReference\AppGest.RSReference.ServerInfoHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RSReference\AppGest.RSReference.Warning.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RSReference\configuration91.svcinfo" />
+    <None Include="Service References\RSReference\configuration.svcinfo" />
+    <None Include="Service References\RSReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Vista\Error.aspx" />
+    <Content Include="Vista\Reportes\FrmReporteAsp.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppGestTema.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Configuracion\ReportMessage.ES.cs" />
+    <Compile Include="ControlBase\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBase\ButtonSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBase\Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBase\LabelSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBase\TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBase\TextBoxSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBase\ucStatusBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlBase\ucStatusBar.Designer.cs">
+      <DependentUpon>ucStatusBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="ParamSesion.cs" />
+    <Compile Include="Service References\RSReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\BusquedaClienteComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\BusquedaClienteComboBox.Designer.cs">
+      <DependentUpon>BusquedaClienteComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucAMBFactura.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucAMBFactura.Designer.cs">
+      <DependentUpon>ucAMBFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcCargaPagoEgresoEmpleado.ItemResumen.cs" />
+    <Compile Include="Vista\Controles\UcDatosPagoEgresoEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDatosPagoEgresoEmpleado.Designer.cs">
+      <DependentUpon>UcDatosPagoEgresoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcCargaPagoEgresoEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcCargaPagoEgresoEmpleado.Designer.cs">
+      <DependentUpon>UcCargaPagoEgresoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDatosParamEgresoXEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDatosParamEgresoXEmpleado.Designer.cs">
+      <DependentUpon>UcDatosParamEgresoXEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDatosEgresosXEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDatosEgresosXEmpleado.Designer.cs">
+      <DependentUpon>UcDatosEgresosXEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDatosPagoMensual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDatosPagoMensual.Designer.cs">
+      <DependentUpon>UcDatosPagoMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDetallePagoIngresosEgresos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcDetallePagoIngresosEgresos.Designer.cs">
+      <DependentUpon>UcDetallePagoIngresosEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcEdicionFactura.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcEdicionFactura.Designer.cs">
+      <DependentUpon>UcEdicionFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcEdicionPagoIngresosEgresos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcEdicionPagoIngresosEgresos.Designer.cs">
+      <DependentUpon>UcEdicionPagoIngresosEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionPagoMensual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionPagoMensual.Designer.cs">
+      <DependentUpon>ucEdicionPagoMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcABMServicioMensual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcABMServicioMensual.Designer.cs">
+      <DependentUpon>UcABMServicioMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucConceptos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucConceptos.Designer.cs">
+      <DependentUpon>ucConceptos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionConceptos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionConceptos.Designer.cs">
+      <DependentUpon>ucEdicionConceptos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionEmpleado.Designer.cs">
+      <DependentUpon>ucEdicionEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEmpleado.Designer.cs">
+      <DependentUpon>ucEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEmpleadoAbrev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEmpleadoAbrev.Designer.cs">
+      <DependentUpon>ucEmpleadoAbrev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcGrilla.Extensiones.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcPagosIngresosEgresos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcPagosIngresosEgresos.Designer.cs">
+      <DependentUpon>UcPagosIngresosEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucPersona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucPersona.Designer.cs">
+      <DependentUpon>ucPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionServicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionServicio.Designer.cs">
+      <DependentUpon>ucEdicionServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucListaServicios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucListaServicios.Designer.cs">
+      <DependentUpon>ucListaServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcEdicionBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcEdicionBase.Designer.cs">
+      <DependentUpon>UcEdicionBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionCochera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionCochera.Designer.cs">
+      <DependentUpon>ucEdicionCochera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucAutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucAutos.Designer.cs">
+      <DependentUpon>ucAutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucAutosAbrev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucAutosAbrev.Designer.cs">
+      <DependentUpon>ucAutosAbrev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcBase.Designer.cs">
+      <DependentUpon>UcBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucCliente.Designer.cs">
+      <DependentUpon>ucCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucClienteAbrev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucClienteAbrev.Designer.cs">
+      <DependentUpon>ucClienteAbrev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucCocheras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucCocheras.Designer.cs">
+      <DependentUpon>ucCocheras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucDatosUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucDatosUsuario.Designer.cs">
+      <DependentUpon>ucDatosUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionCliente.Designer.cs">
+      <DependentUpon>ucEdicionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionMensuales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionMensuales.Designer.cs">
+      <DependentUpon>ucEdicionMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionVehiculo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucEdicionVehiculo.Designer.cs">
+      <DependentUpon>ucEdicionVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcGrilla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcGrilla.Designer.cs">
+      <DependentUpon>UcGrilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucMensuales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucMensuales.Designer.cs">
+      <DependentUpon>ucMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcPagosMensuales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcPagosMensuales.Designer.cs">
+      <DependentUpon>UcPagosMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\ucReporte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\ucReporte.Designer.cs">
+      <DependentUpon>ucReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcToolbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcToolbar.Designer.cs">
+      <DependentUpon>UcToolbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\UcUsuarioNuevo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\UcUsuarioNuevo.Designer.cs">
+      <DependentUpon>UcUsuarioNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Controles\usDatosEntidad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vista\Controles\usDatosEntidad.Designer.cs">
+      <DependentUpon>usDatosEntidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmBaja.Designer.cs">
+      <DependentUpon>FrmBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmBusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmBusquedaCliente.Designer.cs">
+      <DependentUpon>FrmBusquedaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionPagoEgresoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionPagoEgresoEmpleado.Designer.cs">
+      <DependentUpon>FrmEdicionPagoEgresoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionParamEgresoXEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionParamEgresoXEmpleado.Designer.cs">
+      <DependentUpon>FrmEdicionParamEgresoXEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmDetallePagoGastosVarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmDetallePagoGastosVarios.Designer.cs">
+      <DependentUpon>FrmDetallePagoGastosVarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionPagoMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionPagoMensual.Designer.cs">
+      <DependentUpon>FrmEdicionPagoMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmAMBServMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmAMBServMensual.Designer.cs">
+      <DependentUpon>FrmAMBServMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionConceptos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionConceptos.Designer.cs">
+      <DependentUpon>FrmEdicionConceptos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionMensuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionMensuales.Designer.cs">
+      <DependentUpon>FrmEdicionMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmEdicionServicio.Designer.cs">
+      <DependentUpon>FrmEdicionServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmCochera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCochera.Designer.cs">
+      <DependentUpon>FrmCochera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmAutoAbrev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmAutoAbrev.Designer.cs">
+      <DependentUpon>FrmAutoAbrev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmBase.Designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmEmpleado.Designer.cs">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmMigracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmMigracion.Designer.cs">
+      <DependentUpon>FrmMigracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmNuevoUsuario.Designer.cs">
+      <DependentUpon>FrmNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmSelectRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmSelectRegistro.Designer.cs">
+      <DependentUpon>FrmSelectRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\ConfiguracionesReportes.cs" />
+    <Compile Include="Vista\Reportes\FrmReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\FrmReporte.Designer.cs">
+      <DependentUpon>FrmReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\FrmReporte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\FrmReporte2.Designer.cs">
+      <DependentUpon>FrmReporte2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\FrmReporteAsp.aspx.cs">
+      <DependentUpon>FrmReporteAsp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\FrmReporteAsp.aspx.designer.cs">
+      <DependentUpon>FrmReporteAsp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Reportes\FrmVisorReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Reportes\FrmVisorReportes.Designer.cs">
+      <DependentUpon>FrmVisorReportes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ControlBase\Button.resx">
+      <DependentUpon>Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlBase\ButtonSkin.resx">
+      <DependentUpon>ButtonSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlBase\LabelSkin.resx">
+      <DependentUpon>LabelSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlBase\TextBoxSkin.resx">
+      <DependentUpon>TextBoxSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlBase\ucStatusBar.resx">
+      <DependentUpon>ucStatusBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\BusquedaClienteComboBox.resx">
+      <DependentUpon>BusquedaClienteComboBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucAMBFactura.resx">
+      <DependentUpon>ucAMBFactura.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcDatosPagoEgresoEmpleado.resx">
+      <DependentUpon>UcDatosPagoEgresoEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcCargaPagoEgresoEmpleado.resx">
+      <DependentUpon>UcCargaPagoEgresoEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcDatosParamEgresoXEmpleado.resx">
+      <DependentUpon>UcDatosParamEgresoXEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcDatosEgresosXEmpleado.resx">
+      <DependentUpon>UcDatosEgresosXEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcDatosPagoMensual.resx">
+      <DependentUpon>UcDatosPagoMensual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcDetallePagoIngresosEgresos.resx">
+      <DependentUpon>UcDetallePagoIngresosEgresos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcEdicionFactura.resx">
+      <DependentUpon>UcEdicionFactura.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcEdicionPagoIngresosEgresos.resx">
+      <DependentUpon>UcEdicionPagoIngresosEgresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionPagoMensual.resx">
+      <DependentUpon>ucEdicionPagoMensual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcABMServicioMensual.resx">
+      <DependentUpon>UcABMServicioMensual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucConceptos.resx">
+      <DependentUpon>ucConceptos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionConceptos.resx">
+      <DependentUpon>ucEdicionConceptos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionEmpleado.resx">
+      <DependentUpon>ucEdicionEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEmpleado.resx">
+      <DependentUpon>ucEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEmpleadoAbrev.resx">
+      <DependentUpon>ucEmpleadoAbrev.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcPagosIngresosEgresos.resx">
+      <DependentUpon>UcPagosIngresosEgresos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucPersona.resx">
+      <DependentUpon>ucPersona.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionServicio.resx">
+      <DependentUpon>ucEdicionServicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucListaServicios.resx">
+      <DependentUpon>ucListaServicios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcEdicionBase.resx">
+      <DependentUpon>UcEdicionBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionCochera.resx">
+      <DependentUpon>ucEdicionCochera.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucAutos.resx">
+      <DependentUpon>ucAutos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucAutosAbrev.resx">
+      <DependentUpon>ucAutosAbrev.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcBase.resx">
+      <DependentUpon>UcBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucCliente.resx">
+      <DependentUpon>ucCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucClienteAbrev.resx">
+      <DependentUpon>ucClienteAbrev.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucCocheras.resx">
+      <DependentUpon>ucCocheras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucDatosUsuario.resx">
+      <DependentUpon>ucDatosUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionCliente.resx">
+      <DependentUpon>ucEdicionCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionMensuales.resx">
+      <DependentUpon>ucEdicionMensuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucEdicionVehiculo.resx">
+      <DependentUpon>ucEdicionVehiculo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcGrilla.resx">
+      <DependentUpon>UcGrilla.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucMensuales.resx">
+      <DependentUpon>ucMensuales.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcPagosMensuales.resx">
+      <DependentUpon>UcPagosMensuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\ucReporte.resx">
+      <DependentUpon>ucReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcToolbar.resx">
+      <DependentUpon>UcToolbar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\UcUsuarioNuevo.resx">
+      <DependentUpon>UcUsuarioNuevo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Controles\usDatosEntidad.resx">
+      <DependentUpon>usDatosEntidad.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmBaja.resx">
+      <DependentUpon>FrmBaja.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmBusquedaCliente.resx">
+      <DependentUpon>FrmBusquedaCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmEdicionPagoEgresoEmpleado.resx">
+      <DependentUpon>FrmEdicionPagoEgresoEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmEdicionParamEgresoXEmpleado.resx">
+      <DependentUpon>FrmEdicionParamEgresoXEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmDetallePagoGastosVarios.resx">
+      <DependentUpon>FrmDetallePagoGastosVarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmEdicionPagoMensual.resx">
+      <DependentUpon>FrmEdicionPagoMensual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmAMBServMensual.resx">
+      <DependentUpon>FrmAMBServMensual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmEdicionConceptos.resx">
+      <DependentUpon>FrmEdicionConceptos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmEdicionMensuales.resx">
+      <DependentUpon>FrmEdicionMensuales.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmEdicionServicio.resx">
+      <DependentUpon>FrmEdicionServicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCochera.resx">
+      <DependentUpon>FrmCochera.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmAutoAbrev.resx">
+      <DependentUpon>FrmAutoAbrev.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmEmpleado.resx">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmMigracion.resx">
+      <DependentUpon>FrmMigracion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmNuevoUsuario.resx">
+      <DependentUpon>FrmNuevoUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vista\FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmSelectRegistro.resx">
+      <DependentUpon>FrmSelectRegistro.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Reportes\FrmReporte.resx">
+      <DependentUpon>FrmReporte.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Reportes\FrmReporte2.resx">
+      <DependentUpon>FrmReporte2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Reportes\FrmVisorReportes.resx">
+      <DependentUpon>FrmVisorReportes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuracion\Reportes.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuracion\ConexionBD.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\RSReference\ReportExecution2005.wsdl" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppGest.Negocio\AppGest.Negocio.csproj">
+      <Project>{5870491A-722E-44A9-B2B2-95A54CF634A0}</Project>
+      <Name>AppGest.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppGest.Datos\AppGest.Datos.csproj">
+      <Project>{F5D3EE85-A8BC-43C4-80ED-310BE21F2695}</Project>
+      <Name>AppGest.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppGest.Util\AppGest.Util.csproj">
+      <Project>{2D0BD067-C716-4FFF-ABA5-734C6166882D}</Project>
+      <Name>AppGest.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vista\Controles\BarraHerr\" />
+    <Folder Include="Vista\Controles\Botones\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RSReference\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v10.0\Gizmox.VWGApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57508</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

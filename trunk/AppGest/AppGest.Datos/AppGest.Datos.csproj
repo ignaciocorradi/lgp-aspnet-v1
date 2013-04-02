@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5D3EE85-A8BC-43C4-80ED-310BE21F2695}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppGest.Datos</RootNamespace>
+    <AssemblyName>AppGest.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Persistencia\Conversion\IConversorEntidades.cs" />
+    <Compile Include="Persistencia\Conversion\PersistidorPorPeticion.cs" />
+    <Compile Include="Persistencia\Enumeraciones.cs" />
+    <Compile Include="Persistencia\Extensiones\EB.Constantes.cs">
+      <DependentUpon>EB.Constantes.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\EntityObject.Extensiones.cs" />
+    <Compile Include="Persistencia\Extensiones\EntityObject.Mappings.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Cliente.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Cliente.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Cochera.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Cochera.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Concepto.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Concepto.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.ConfMenu.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.ConfMenu.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Contacto.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.EB.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.EB.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Empleado.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Empleado.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Empresa.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Empresa.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Entidad.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Entidad.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Persona.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Persona.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Reg_Det.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Reg_Det.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Reg_encab.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Reg_encab.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Usuario.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Usuario.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Vehiculo.cs">
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Extensiones.Vehiculo.Relaciones.cs">
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\GeneradorExtensiones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneradorExtensiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\GeneradorExtensiones.Relaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneradorExtensiones.Relaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\Extensiones\Templates\HelperCsClase.cs" />
+    <Compile Include="Persistencia\Extensiones\Templates\HelperEdmx.cs" />
+    <Compile Include="Persistencia\LinqEntidades.cs" />
+    <Compile Include="Persistencia\ILinqEntidades.cs" />
+    <Compile Include="Persistencia\Extensiones\EB.Extensiones.cs" />
+    <Compile Include="Persistencia\Extensiones\EB.Extensiones.Negocio.cs" />
+    <Compile Include="Persistencia\ModeloDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloDatos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Persistencia\PersistidorPredet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Persistencia\ModeloDatos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloDatos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\Funciones\Funciones.sql" />
+    <Content Include="SQL\Listas\01.2012.10.06_1200 - Creacion de vistas de Listas de Parámetros.sql" />
+    <Content Include="SQL\Migración\Importacion de datos LGP a noviembre_2008.sql" />
+    <Content Include="SQL\Migración\Importacion de datos LGP al 20 de noviembre_2012.sql" />
+    <Content Include="SQL\Migración\lgp consulta de estado de pagos mensuales.sql" />
+    <Content Include="SQL\Registros\Vista v_RegistrosMensuales.sql" />
+    <Content Include="SQL\Vistas\Todas las Vistas.sql" />
+    <None Include="Persistencia\Extensiones\EB.Sql.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EB.Sql.tt</DependentUpon>
+    </None>
+    <Content Include="Persistencia\ModeloDatos.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Persistencia\Extensiones\EB.Sql.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EB.Sql.sql</LastGenOutput>
+    </None>
+    <None Include="Persistencia\Extensiones\EB.Constantes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EB.Constantes.cs</LastGenOutput>
+    </None>
+    <None Include="Persistencia\Extensiones\GeneradorExtensiones.Relaciones.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GeneradorExtensiones.Relaciones.cs</LastGenOutput>
+    </None>
+    <None Include="Persistencia\Extensiones\GeneradorExtensiones.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GeneradorExtensiones.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\DataSources\AppGest.Datos.Persistencia.Contendor_LGP.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppGest.Util\AppGest.Util.csproj">
+      <Project>{2D0BD067-C716-4FFF-ABA5-734C6166882D}</Project>
+      <Name>AppGest.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
