@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DS_LGP">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=.\SQL2008R2E;Initial Catalog=PROD_LGP</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+    <Prompt>Specify a user name and password for data source DS_LGP</Prompt>
+  </ConnectionProperties>
+  <DataSourceID>c63cab3f-0761-40ba-b916-8a7fc86ed3b5</DataSourceID>
+</RptDataSource>

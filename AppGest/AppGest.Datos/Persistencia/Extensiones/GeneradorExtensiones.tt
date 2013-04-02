@@ -1,0 +1,274 @@
+﻿<#
+//*********************************************************
+//
+//    Copyright (c) Microsoft. All rights reserved.
+//    This code is licensed under the Microsoft Public License.
+//    THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+//    ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+//    IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+//    PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+#>
+<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#><#@
+ output extension=".cs"#><#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+string prefijoDto = "";
+string baseClass = "EntityObject";
+
+
+string inputFile = @"..\ModeloDatos.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = "AppGest.Datos.Persistencia";
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+// Write out support code to primary template output file
+WriteHeader(fileManager);
+BeginNamespace(namespaceName, code);
+WriteCustomObservableCollection();
+EndNamespace(namespaceName);
+
+Dictionary<string, string> typeMapping = new Dictionary<string, string>();
+
+// Entidades del archivo EDMF
+foreach (StructuralType entity in ItemCollection.GetItems<StructuralType>().OrderBy(e => e.Name))
+{ // 1
+
+    var esEntidad= entity is EntityType;
+    var esComplex= entity is ComplexType;
+
+    if ((!esEntidad) && (!esComplex))
+            continue;
+    // Creación del Archivo
+    fileManager.StartNewFile("Extensiones." + entity.Name + ".cs");
+
+    // Inicio espacio de nombres
+    BeginNamespace(namespaceName, code);
+
+
+        string carga= string.Empty;
+        string llenado= string.Empty;
+#>
+
+<#=
+
+        // Declaración de la clase.
+        Accessibility.ForType(entity)#> <#=code.SpaceAfter(esEntidad ? code.AbstractOption(entity as EntityType): "")#>partial class <#=prefijoDto#><#=code.Escape(entity)#><#            
+        
+        typeMapping.Add(prefijoDto + code.Escape(entity), code.Escape(entity));
+        var tbase = entity.BaseType == null ? baseClass: entity.BaseType.Name;
+        //var tipo = code.StringBefore(" : ", prefijoDto + tbase);
+#><#= ""/*tipo*/ #>
+{
+
+<#
+    // Creación de propiedades primitivas
+        if (esEntidad || !esEntidad)
+        {
+            foreach (EdmMember edmProperty in entity.Members.Where(p => p.DeclaringType == entity))
+            { // 2
+                
+                if (!esEntidad || ((EntityType) entity).Properties.Contains(edmProperty))
+                {
+                    if (!(edmProperty.TypeUsage.EdmType is ComplexType))
+                    {
+                        carga += "\r\n\t\t" + code.Escape(edmProperty) + " = entidad." + code.Escape(edmProperty) + ";";
+                        llenado += "\r\n\t\t entidad." + code.Escape(edmProperty) + " = " + code.Escape(edmProperty) + ";";
+                    }
+                    else
+                    {
+                        carga += "\r\n\t\t" + code.Escape(edmProperty) + ".CopiarDesde(entidad." + code.Escape(edmProperty) + ");";
+                        llenado += "\r\n\t\t entidad." + code.Escape(edmProperty) + ".CopiarDesde(" + code.Escape(edmProperty) + ");";
+                    }
+                }
+            }
+        }
+#>
+
+<#
+    region.Begin("Métodos de Copia");
+
+    if (entity.Name != baseClass)
+        {
+
+        var tbase2 = entity.BaseType == null ? baseClass: entity.BaseType.Name;
+#>
+
+    public <#= (tbase2 != baseClass ? "override" : "virtual") #> void CopiarDesde(<#= esEntidad ? "EntityObject" : entity.Name #> origen)
+    {
+<#
+    if (tbase2 != baseClass)
+            {
+#>
+        base.CopiarDesde(origen);
+<#
+            }
+#>
+
+        var entidad = (<#=entity.Name#>) origen;
+        <#=carga#>
+<#
+        
+#>
+    }
+<#
+        }        
+
+    if (entity.Name != baseClass)
+        {
+
+    var tbase3 = entity.BaseType == null ? baseClass: entity.BaseType.Name;
+#>
+
+    public <#= (tbase3 != baseClass ? "override" : "virtual") #> void CopiarA(<#= esEntidad ? "EntityObject" : entity.Name #> destino)
+    {
+<#
+    if (tbase3 != baseClass)
+            {
+#>
+        base.CopiarA(destino);
+<#
+            }
+#>
+
+        var entidad = (<#=entity.Name#>) destino;
+        <#=llenado#>
+<#
+        
+#>
+    }
+<#
+        }        
+    region.End();
+#>
+
+}
+<#
+EndNamespace(namespaceName);
+} // 1
+fileManager.StartNewFile(prefijoDto + baseClass + ".Mappings.cs");
+#>
+<#
+fileManager.Process();
+ #>
+
+
+
+<#+
+void WriteHeader(EntityFrameworkTemplateFileManager fileManager, params string[] extraUsings)
+{
+    fileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated from a template.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Data.Objects.DataClasses;
+
+<#=String.Join(String.Empty, extraUsings.Select(u => "using " + u + ";" + Environment.NewLine).ToArray())#>
+<#+
+    fileManager.EndBlock();
+}
+
+void BeginNamespace(string namespaceName, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+#>
+namespace <#=code.EscapeNamespace(namespaceName)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+
+void EndNamespace(string namespaceName)
+{
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+bool IsReadWriteAccessibleProperty(EdmMember member)
+{
+    string setter = Accessibility.ForWriteOnlyProperty(member);
+    string getter = Accessibility.ForReadOnlyProperty(member);
+
+    return getter != "private" && getter != "protected" && setter != "private" && setter != "protected";
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+void WriteCustomObservableCollection()
+{
+#>
+// An System.Collections.ObjectModel.ObservableCollection that raises
+// individual item removal notifications on clear and prevents adding duplicates.
+public class FixupCollection<T> : ObservableCollection<T>
+{
+    protected override void ClearItems()
+    {
+        new List<T>(this).ForEach(t => Remove(t));
+    }
+
+    protected override void InsertItem(int index, T item)
+    {
+        if (!this.Contains(item))
+        {
+            base.InsertItem(index, item);
+        }
+    }
+}
+<#+
+}
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    Dictionary<string, bool> alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(StructuralType type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+
+    }
+
+    return true;
+}
+#>

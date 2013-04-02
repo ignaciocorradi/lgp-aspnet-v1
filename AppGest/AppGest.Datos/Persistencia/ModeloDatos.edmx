@@ -1,0 +1,1400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Datos.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DatosStoreContainer">
+          <EntitySet Name="ConfMenu" EntityType="Datos.Store.ConfMenu" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB" EntityType="Datos.Store.EB" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Cliente" EntityType="Datos.Store.EB_Cliente" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Cochera" EntityType="Datos.Store.EB_Cochera" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Concepto" EntityType="Datos.Store.EB_Concepto" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Empleado" EntityType="Datos.Store.EB_Empleado" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Empresa" EntityType="Datos.Store.EB_Empresa" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Entidad" EntityType="Datos.Store.EB_Entidad" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Persona" EntityType="Datos.Store.EB_Persona" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Usuario" EntityType="Datos.Store.EB_Usuario" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="EB_Vehiculo" EntityType="Datos.Store.EB_Vehiculo" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="Reg_Det" EntityType="Datos.Store.Reg_Det" store:Type="Tables" Schema="LGP" />
+          <EntitySet Name="Reg_encab" EntityType="Datos.Store.Reg_encab" store:Type="Tables" Schema="LGP" />
+          <AssociationSet Name="FK_Cliente_inherits_Persona" Association="Datos.Store.FK_Cliente_inherits_Persona">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="EB_Cliente" EntitySet="EB_Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cochera_inherits_Entidad" Association="Datos.Store.FK_Cochera_inherits_Entidad">
+            <End Role="EB_Entidad" EntitySet="EB_Entidad" />
+            <End Role="EB_Cochera" EntitySet="EB_Cochera" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Concepto_inherits_EB" Association="Datos.Store.FK_Concepto_inherits_EB">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="EB_Concepto" EntitySet="EB_Concepto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConceptoReg_Det" Association="Datos.Store.FK_ConceptoReg_Det">
+            <End Role="EB_Concepto" EntitySet="EB_Concepto" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConceptoReg_encab" Association="Datos.Store.FK_ConceptoReg_encab">
+            <End Role="EB_Concepto" EntitySet="EB_Concepto" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EBReg_Det3" Association="Datos.Store.FK_EBReg_Det3">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EBReg_Det4" Association="Datos.Store.FK_EBReg_Det4">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EBReg_Det5" Association="Datos.Store.FK_EBReg_Det5">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EBReg_Det6" Association="Datos.Store.FK_EBReg_Det6">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EBReg_Det7" Association="Datos.Store.FK_EBReg_Det7">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_inherits_Persona" Association="Datos.Store.FK_Empleado_inherits_Persona">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="EB_Empleado" EntitySet="EB_Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_inherits_Persona" Association="Datos.Store.FK_Empresa_inherits_Persona">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="EB_Empresa" EntitySet="EB_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Entidad_inherits_EB" Association="Datos.Store.FK_Entidad_inherits_EB">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="EB_Entidad" EntitySet="EB_Entidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persona_inherits_Entidad" Association="Datos.Store.FK_Persona_inherits_Entidad">
+            <End Role="EB_Entidad" EntitySet="EB_Entidad" />
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persona_Reg_encab" Association="Datos.Store.FK_Persona_Reg_encab">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaReg_Det" Association="Datos.Store.FK_PersonaReg_Det">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaReg_Det1" Association="Datos.Store.FK_PersonaReg_Det1">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaReg_Det2" Association="Datos.Store.FK_PersonaReg_Det2">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaReg_encab" Association="Datos.Store.FK_PersonaReg_encab">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaReg_encab1" Association="Datos.Store.FK_PersonaReg_encab1">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaReg_encab2" Association="Datos.Store.FK_PersonaReg_encab2">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaUsuario" Association="Datos.Store.FK_PersonaUsuario">
+            <End Role="EB_Persona" EntitySet="EB_Persona" />
+            <End Role="EB_Usuario" EntitySet="EB_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reg_encabReg_Det" Association="Datos.Store.FK_Reg_encabReg_Det">
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_inherits_Entidad" Association="Datos.Store.FK_Usuario_inherits_Entidad">
+            <End Role="EB_Entidad" EntitySet="EB_Entidad" />
+            <End Role="EB_Usuario" EntitySet="EB_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioReg_encab" Association="Datos.Store.FK_UsuarioReg_encab">
+            <End Role="EB_Usuario" EntitySet="EB_Usuario" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehiculo_inherits_Entidad" Association="Datos.Store.FK_Vehiculo_inherits_Entidad">
+            <End Role="EB_Entidad" EntitySet="EB_Entidad" />
+            <End Role="EB_Vehiculo" EntitySet="EB_Vehiculo" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ConfMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Orden" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Paginas" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Grupos" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Items" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImagenItem" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TagItem" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ToolTips" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AutoSize" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Alta" Type="datetime" Nullable="false" />
+          <Property Name="Baja" Type="datetime" />
+          <Property Name="Abreviatura" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+          <Property Name="Observaciones" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EB_Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="NroCliente" Type="int" Nullable="false" />
+          <Property Name="CUIT" Type="nvarchar(max)" />
+          <Property Name="DomicilioFiscal" Type="nvarchar(max)" />
+          <Property Name="RazonSocial" Type="nvarchar(max)" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB_Cochera">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB_Concepto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Clase" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="int" Nullable="false" />
+          <Property Name="DeSistema" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB_Empleado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="CUIL" Type="nvarchar(max)" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB_Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB_Entidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB_Persona">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Tipo" Type="int" Nullable="false" />
+          <Property Name="Contacto_Domicilio" Type="nvarchar(max)" />
+          <Property Name="Contacto_Telefono" Type="nvarchar" MaxLength="200" />
+          <Property Name="Contacto_TelefonoTrabajo" Type="nvarchar" MaxLength="200" />
+          <Property Name="Contacto_Movil" Type="nvarchar" MaxLength="200" />
+          <Property Name="Contacto_Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Nombre2" Type="nvarchar(max)" />
+          <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Dni" Type="int" />
+          <Property Name="Lock" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EB_Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Clave" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Tipo" Type="tinyint" Nullable="false" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Persona_Id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="EB_Vehiculo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Modelo" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reg_Det">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="FechaBaja" Type="datetime" />
+          <Property Name="FechaModif" Type="datetime" />
+          <Property Name="Cantidad" Type="decimal" Scale="5" />
+          <Property Name="Precio" Type="decimal" Scale="5" />
+          <Property Name="Importe" Type="decimal" Scale="5" />
+          <Property Name="ValNum1" Type="decimal" Scale="5" />
+          <Property Name="ValNum2" Type="decimal" Scale="5" />
+          <Property Name="ValNum3" Type="decimal" Scale="5" />
+          <Property Name="ValNum4" Type="decimal" Scale="5" />
+          <Property Name="ValText1" Type="varchar(max)" />
+          <Property Name="ValText2" Type="varchar(max)" />
+          <Property Name="ValText3" Type="varchar(max)" />
+          <Property Name="ValText4" Type="varchar(max)" />
+          <Property Name="Comentario" Type="varchar(max)" />
+          <Property Name="ValFecha1" Type="datetime" />
+          <Property Name="ValFecha2" Type="datetime" />
+          <Property Name="ValFecha3" Type="datetime" />
+          <Property Name="ValFecha4" Type="datetime" />
+          <Property Name="Reg_encab_Id" Type="bigint" Nullable="false" />
+          <Property Name="Concepto_Id" Type="bigint" />
+          <Property Name="ValLista1_Id" Type="bigint" />
+          <Property Name="ValLista2_Id" Type="bigint" />
+          <Property Name="ValLista3_Id" Type="bigint" />
+          <Property Name="ValLista4_Id" Type="bigint" />
+          <Property Name="UM_Id" Type="bigint" />
+          <Property Name="EntidadAfectada2_Id" Type="bigint" />
+          <Property Name="EntidadAfectada1_Id" Type="bigint" />
+          <Property Name="EntidadAfectada3_Id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Reg_encab">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="FechaRegistro" Type="datetime" />
+          <Property Name="Comentario" Type="varchar(max)" />
+          <Property Name="FechaModif" Type="datetime" />
+          <Property Name="FechaBaja" Type="datetime" />
+          <Property Name="Usuario_Id" Type="bigint" />
+          <Property Name="Concepto_Id" Type="bigint" />
+          <Property Name="EntidadRegistro_Id" Type="bigint" />
+          <Property Name="EntidadEmpresa_Id" Type="bigint" />
+          <Property Name="EntidadResp_Id" Type="bigint" />
+          <Property Name="EntidadAfectada_Id" Type="bigint" />
+          <Property Name="Identificador" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo" Type="int" />
+        </EntityType>
+        <Association Name="FK_Cliente_inherits_Persona">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="1" />
+          <End Role="EB_Cliente" Type="Datos.Store.EB_Cliente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Cliente">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cochera_inherits_Entidad">
+          <End Role="EB_Entidad" Type="Datos.Store.EB_Entidad" Multiplicity="1" />
+          <End Role="EB_Cochera" Type="Datos.Store.EB_Cochera" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Entidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Cochera">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Concepto_inherits_EB">
+          <End Role="EB" Type="Datos.Store.EB" Multiplicity="1" />
+          <End Role="EB_Concepto" Type="Datos.Store.EB_Concepto" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Concepto">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConceptoReg_Det">
+          <End Role="EB_Concepto" Type="Datos.Store.EB_Concepto" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Concepto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="Concepto_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConceptoReg_encab">
+          <End Role="EB_Concepto" Type="Datos.Store.EB_Concepto" Multiplicity="0..1" />
+          <End Role="Reg_encab" Type="Datos.Store.Reg_encab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Concepto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_encab">
+              <PropertyRef Name="Concepto_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EBReg_Det3">
+          <End Role="EB" Type="Datos.Store.EB" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="ValLista1_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EBReg_Det4">
+          <End Role="EB" Type="Datos.Store.EB" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="ValLista2_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EBReg_Det5">
+          <End Role="EB" Type="Datos.Store.EB" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="ValLista3_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EBReg_Det6">
+          <End Role="EB" Type="Datos.Store.EB" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="ValLista4_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EBReg_Det7">
+          <End Role="EB" Type="Datos.Store.EB" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="UM_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_inherits_Persona">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="1" />
+          <End Role="EB_Empleado" Type="Datos.Store.EB_Empleado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Empleado">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_inherits_Persona">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="1" />
+          <End Role="EB_Empresa" Type="Datos.Store.EB_Empresa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Empresa">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Entidad_inherits_EB">
+          <End Role="EB" Type="Datos.Store.EB" Multiplicity="1" />
+          <End Role="EB_Entidad" Type="Datos.Store.EB_Entidad" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Entidad">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persona_inherits_Entidad">
+          <End Role="EB_Entidad" Type="Datos.Store.EB_Entidad" Multiplicity="1" />
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Entidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persona_Reg_encab">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="Reg_encab" Type="Datos.Store.Reg_encab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_encab">
+              <PropertyRef Name="EntidadRegistro_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaReg_Det">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="EntidadAfectada2_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaReg_Det1">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="EntidadAfectada1_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaReg_Det2">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="EntidadAfectada3_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaReg_encab">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="Reg_encab" Type="Datos.Store.Reg_encab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_encab">
+              <PropertyRef Name="EntidadEmpresa_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaReg_encab1">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="Reg_encab" Type="Datos.Store.Reg_encab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_encab">
+              <PropertyRef Name="EntidadResp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaReg_encab2">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="Reg_encab" Type="Datos.Store.Reg_encab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_encab">
+              <PropertyRef Name="EntidadAfectada_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaUsuario">
+          <End Role="EB_Persona" Type="Datos.Store.EB_Persona" Multiplicity="0..1" />
+          <End Role="EB_Usuario" Type="Datos.Store.EB_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Usuario">
+              <PropertyRef Name="Persona_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reg_encabReg_Det">
+          <End Role="Reg_encab" Type="Datos.Store.Reg_encab" Multiplicity="1" />
+          <End Role="Reg_Det" Type="Datos.Store.Reg_Det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reg_encab">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_Det">
+              <PropertyRef Name="Reg_encab_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_inherits_Entidad">
+          <End Role="EB_Entidad" Type="Datos.Store.EB_Entidad" Multiplicity="1" />
+          <End Role="EB_Usuario" Type="Datos.Store.EB_Usuario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Entidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Usuario">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioReg_encab">
+          <End Role="EB_Usuario" Type="Datos.Store.EB_Usuario" Multiplicity="0..1" />
+          <End Role="Reg_encab" Type="Datos.Store.Reg_encab" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reg_encab">
+              <PropertyRef Name="Usuario_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehiculo_inherits_Entidad">
+          <End Role="EB_Entidad" Type="Datos.Store.EB_Entidad" Multiplicity="1" />
+          <End Role="EB_Vehiculo" Type="Datos.Store.EB_Vehiculo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EB_Entidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EB_Vehiculo">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Datos" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Contendor_LGP" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EB" EntityType="Datos.EB" />
+          <EntitySet Name="Reg_Det" EntityType="Datos.Reg_Det" />
+          <EntitySet Name="Reg_encab" EntityType="Datos.Reg_encab" />
+          <AssociationSet Name="Reg_encabReg_Det" Association="Datos.Reg_encabReg_Det">
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioReg_encab" Association="Datos.UsuarioReg_encab">
+            <End Role="Usuario" EntitySet="EB" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaUsuario" Association="Datos.PersonaUsuario">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Usuario" EntitySet="EB" />
+          </AssociationSet>
+          <AssociationSet Name="ConceptoReg_Det" Association="Datos.ConceptoReg_Det">
+            <End Role="Concepto" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="ConceptoReg_encab" Association="Datos.ConceptoReg_encab">
+            <End Role="Concepto" EntitySet="EB" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="EBReg_Det3" Association="Datos.EBReg_Det3">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="EBReg_Det4" Association="Datos.EBReg_Det4">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="EBReg_Det5" Association="Datos.EBReg_Det5">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="EBReg_Det6" Association="Datos.EBReg_Det6">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="EBReg_Det7" Association="Datos.EBReg_Det7">
+            <End Role="EB" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="Asoc_EntidadRegistro" Association="Datos.Persona_Reg_encab">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaReg_encab" Association="Datos.PersonaReg_encab">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaReg_encab1" Association="Datos.PersonaReg_encab1">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaReg_encab2" Association="Datos.PersonaReg_encab2">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Reg_encab" EntitySet="Reg_encab" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaReg_Det" Association="Datos.PersonaReg_Det">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaReg_Det1" Association="Datos.PersonaReg_Det1">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaReg_Det2" Association="Datos.PersonaReg_Det2">
+            <End Role="Persona" EntitySet="EB" />
+            <End Role="Reg_Det" EntitySet="Reg_Det" />
+          </AssociationSet>
+          <EntitySet Name="ConfMenu" EntityType="Datos.ConfMenu" />
+        </EntityContainer>
+        <EntityType Name="EB">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Alta" Type="DateTime" Nullable="false" />
+          <Property Name="Baja" Type="DateTime" Nullable="true" />
+          <Property Name="Abreviatura" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="true" />
+          <Property Type="String" Name="Observaciones" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Concepto" BaseType="Datos.EB">
+          <Property Type="Int32" Name="Clase" Nullable="false" />
+          <Property Type="Int32" Name="Valor" Nullable="false" />
+          <Property Type="Boolean" Name="DeSistema" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Entidad" BaseType="Datos.EB">
+        </EntityType>
+        <EntityType Name="Usuario" BaseType="Datos.Entidad">
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Persona" Relationship="Datos.PersonaUsuario" FromRole="Usuario" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Type="Byte" Name="Tipo" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reg_Det">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaAlta" Type="DateTime" />
+          <Property Name="FechaBaja" Type="DateTime" Nullable="true" />
+          <Property Name="FechaModif" Type="DateTime" />
+          <Property Name="Cantidad" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Importe" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="ValNum1" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="ValNum2" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="ValNum3" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="ValNum4" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="ValText1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ValText2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ValText3" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ValText4" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Comentario" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Reg_encab" Relationship="Datos.Reg_encabReg_Det" FromRole="Reg_Det" ToRole="Reg_encab" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Concepto" Relationship="Datos.ConceptoReg_Det" FromRole="Reg_Det" ToRole="Concepto" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Type="DateTime" Name="ValFecha1" Nullable="true" />
+          <Property Type="DateTime" Name="ValFecha2" Nullable="true" />
+          <Property Type="DateTime" Name="ValFecha3" Nullable="true" />
+          <Property Type="DateTime" Name="ValFecha4" Nullable="true" />
+          <NavigationProperty Name="ValLista1" Relationship="Datos.EBReg_Det3" FromRole="Reg_Det" ToRole="EB" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="ValLista2" Relationship="Datos.EBReg_Det4" FromRole="Reg_Det" ToRole="EB" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="ValLista3" Relationship="Datos.EBReg_Det5" FromRole="Reg_Det" ToRole="EB" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="ValLista4" Relationship="Datos.EBReg_Det6" FromRole="Reg_Det" ToRole="EB" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="UM" Relationship="Datos.EBReg_Det7" FromRole="Reg_Det" ToRole="EB" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="EntidadAfectada2" Relationship="Datos.PersonaReg_Det" FromRole="Reg_Det" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="EntidadAfectada1" Relationship="Datos.PersonaReg_Det1" FromRole="Reg_Det" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="EntidadAfectada3" Relationship="Datos.PersonaReg_Det2" FromRole="Reg_Det" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        </EntityType>
+        <EntityType Name="Reg_encab">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" />
+          <Property Name="FechaRegistro" Type="DateTime" />
+          <Property Name="Comentario" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FechaModif" Type="DateTime" />
+          <Property Name="FechaBaja" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Reg_Det" Relationship="Datos.Reg_encabReg_Det" FromRole="Reg_encab" ToRole="Reg_Det" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Usuario" Relationship="Datos.UsuarioReg_encab" FromRole="Reg_encab" ToRole="Usuario" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="Concepto" Relationship="Datos.ConceptoReg_encab" FromRole="Reg_encab" ToRole="Concepto" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="EntidadRegistro" Relationship="Datos.Persona_Reg_encab" FromRole="Reg_encab" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="EntidadEmpresa" Relationship="Datos.PersonaReg_encab" FromRole="Reg_encab" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="EntidadResp" Relationship="Datos.PersonaReg_encab1" FromRole="Reg_encab" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <NavigationProperty Name="EntidadAfectada" Relationship="Datos.PersonaReg_encab2" FromRole="Reg_encab" ToRole="Persona" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Type="String" Name="Identificador" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Tipo" />
+          </EntityType>
+        <ComplexType Name="Contacto">
+          <Property Type="String" Name="Domicilio" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefono" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelefonoTrabajo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Movil" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="200" FixedLength="false" Unicode="true" />
+        </ComplexType>
+        <Association Name="Reg_encabReg_Det">
+          <End Type="Datos.Reg_encab" Role="Reg_encab" Multiplicity="1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Cliente" BaseType="Datos.Persona">
+          <Property Type="Int32" Name="NroCliente" Nullable="false" >
+            <Documentation>
+              <Summary>Nro de cliente dentro del negocio</Summary>
+              <LongDescription>Nro de cliente dentro del negocio</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="CUIT" Nullable="true" />
+          <Property Type="String" Name="DomicilioFiscal" Nullable="true" />
+          <Property Type="String" Name="RazonSocial" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Empleado" BaseType="Datos.Persona">
+          <Property Type="String" Name="CUIL" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Vehiculo" BaseType="Datos.Entidad">
+          <Property Type="String" Name="Modelo" Nullable="true" />
+          <Property Type="String" Name="Marca" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Cochera" BaseType="Datos.Entidad">
+          </EntityType>
+        <EntityType Name="Persona" BaseType="Datos.Entidad">
+          <Property Type="Int32" Name="Tipo" Nullable="false" />
+          <Property Name="Contacto" Type="Datos.Contacto" Nullable="false" />
+          <Property Type="String" Name="Nombre2" />
+          <Property Type="String" Name="Apellido" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Datos.PersonaUsuario" FromRole="Persona" ToRole="Usuario" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Type="Int32" Name="Dni" Nullable="true" DefaultValue="0" />
+          <Property Type="Boolean" Name="Lock" Nullable="false" DefaultValue="false" />
+        </EntityType>
+        <EntityType Name="Empresa" BaseType="Datos.Persona">
+          </EntityType>
+        <Association Name="UsuarioReg_encab">
+          <End Type="Datos.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="Datos.Reg_encab" Role="Reg_encab" Multiplicity="0..1" />
+        </Association>
+        <Association Name="PersonaUsuario">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Usuario" Role="Usuario" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ConceptoReg_Det">
+          <End Type="Datos.Concepto" Role="Concepto" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="ConceptoReg_encab">
+          <End Type="Datos.Concepto" Role="Concepto" Multiplicity="0..1" />
+          <End Type="Datos.Reg_encab" Role="Reg_encab" Multiplicity="*" />
+        </Association>
+        <Association Name="EBReg_Det3">
+          <End Type="Datos.EB" Role="EB" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="EBReg_Det4">
+          <End Type="Datos.EB" Role="EB" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="EBReg_Det5">
+          <End Type="Datos.EB" Role="EB" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="EBReg_Det6">
+          <End Type="Datos.EB" Role="EB" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="EBReg_Det7">
+          <Documentation>
+            <Summary>Unidad de medidas</Summary>
+          </Documentation>
+          <End Type="Datos.EB" Role="EB" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="Persona_Reg_encab">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Reg_encab" Role="Reg_encab" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonaReg_encab">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Reg_encab" Role="Reg_encab" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonaReg_encab1">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Reg_encab" Role="Reg_encab" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonaReg_encab2">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Reg_encab" Role="Reg_encab" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonaReg_Det">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonaReg_Det1">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonaReg_Det2">
+          <End Type="Datos.Persona" Role="Persona" Multiplicity="0..1" />
+          <End Type="Datos.Reg_Det" Role="Reg_Det" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ConfMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Paginas" Nullable="false" />
+          <Property Type="String" Name="Grupos" Nullable="false" />
+          <Property Type="String" Name="Items" Nullable="false" />
+          <Property Type="String" Name="ImagenItem" Nullable="false" />
+          <Property Type="String" Name="TagItem" Nullable="false" />
+          <Property Type="String" Name="ToolTips" Nullable="false" />
+          <Property Type="String" Name="AutoSize" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatosStoreContainer" CdmEntityContainer="Contendor_LGP">
+    <EntitySetMapping Name="EB">
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.EB)">
+        <MappingFragment StoreEntitySet="EB">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Alta" ColumnName="Alta" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Abreviatura" ColumnName="Abreviatura" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Entidad)">
+        <MappingFragment StoreEntitySet="EB_Entidad">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Usuario)">
+        <MappingFragment StoreEntitySet="EB_Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Persona)">
+        <MappingFragment StoreEntitySet="EB_Persona">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ComplexProperty Name="Contacto" TypeName="Datos.Contacto">
+            <ScalarProperty Name="Domicilio" ColumnName="Contacto_Domicilio" />
+            <ScalarProperty Name="Telefono" ColumnName="Contacto_Telefono" />
+            <ScalarProperty Name="TelefonoTrabajo" ColumnName="Contacto_TelefonoTrabajo" />
+            <ScalarProperty Name="Movil" ColumnName="Contacto_Movil" />
+            <ScalarProperty Name="Email" ColumnName="Contacto_Email" />
+          </ComplexProperty>
+          <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Lock" ColumnName="Lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Concepto)">
+        <MappingFragment StoreEntitySet="EB_Concepto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Clase" ColumnName="Clase" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="DeSistema" ColumnName="DeSistema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Cliente)">
+        <MappingFragment StoreEntitySet="EB_Cliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NroCliente" ColumnName="NroCliente" />
+          <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+          <ScalarProperty Name="DomicilioFiscal" ColumnName="DomicilioFiscal" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Empleado)">
+        <MappingFragment StoreEntitySet="EB_Empleado">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CUIL" ColumnName="CUIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Vehiculo)">
+        <MappingFragment StoreEntitySet="EB_Vehiculo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Cochera)">
+        <MappingFragment StoreEntitySet="EB_Cochera">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Empresa)">
+        <MappingFragment StoreEntitySet="EB_Empresa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reg_Det">
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Reg_Det)">
+        <MappingFragment StoreEntitySet="Reg_Det">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="FechaModif" ColumnName="FechaModif" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="ValNum1" ColumnName="ValNum1" />
+          <ScalarProperty Name="ValNum2" ColumnName="ValNum2" />
+          <ScalarProperty Name="ValNum3" ColumnName="ValNum3" />
+          <ScalarProperty Name="ValNum4" ColumnName="ValNum4" />
+          <ScalarProperty Name="ValText1" ColumnName="ValText1" />
+          <ScalarProperty Name="ValText2" ColumnName="ValText2" />
+          <ScalarProperty Name="ValText3" ColumnName="ValText3" />
+          <ScalarProperty Name="ValText4" ColumnName="ValText4" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="ValFecha1" ColumnName="ValFecha1" />
+          <ScalarProperty Name="ValFecha2" ColumnName="ValFecha2" />
+          <ScalarProperty Name="ValFecha3" ColumnName="ValFecha3" />
+          <ScalarProperty Name="ValFecha4" ColumnName="ValFecha4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reg_encab">
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.Reg_encab)">
+        <MappingFragment StoreEntitySet="Reg_encab">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="FechaModif" ColumnName="FechaModif" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfMenu">
+      <EntityTypeMapping TypeName="IsTypeOf(Datos.ConfMenu)">
+        <MappingFragment StoreEntitySet="ConfMenu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="Paginas" ColumnName="Paginas" />
+          <ScalarProperty Name="Grupos" ColumnName="Grupos" />
+          <ScalarProperty Name="Items" ColumnName="Items" />
+          <ScalarProperty Name="ImagenItem" ColumnName="ImagenItem" />
+          <ScalarProperty Name="TagItem" ColumnName="TagItem" />
+          <ScalarProperty Name="ToolTips" ColumnName="ToolTips" />
+          <ScalarProperty Name="AutoSize" ColumnName="AutoSize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Reg_encabReg_Det" TypeName="Datos.Reg_encabReg_Det" StoreEntitySet="Reg_Det">
+      <EndProperty Name="Reg_encab">
+        <ScalarProperty Name="Id" ColumnName="Reg_encab_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UsuarioReg_encab" TypeName="Datos.UsuarioReg_encab" StoreEntitySet="Reg_encab">
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="Id" ColumnName="Usuario_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_encab">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Usuario_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaUsuario" TypeName="Datos.PersonaUsuario" StoreEntitySet="EB_Usuario">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="Persona_Id" />
+      </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Persona_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConceptoReg_Det" TypeName="Datos.ConceptoReg_Det" StoreEntitySet="Reg_Det">
+      <EndProperty Name="Concepto">
+        <ScalarProperty Name="Id" ColumnName="Concepto_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Concepto_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConceptoReg_encab" TypeName="Datos.ConceptoReg_encab" StoreEntitySet="Reg_encab">
+      <EndProperty Name="Concepto">
+        <ScalarProperty Name="Id" ColumnName="Concepto_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_encab">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Concepto_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EBReg_Det3" TypeName="Datos.EBReg_Det3" StoreEntitySet="Reg_Det">
+      <EndProperty Name="EB">
+        <ScalarProperty Name="Id" ColumnName="ValLista1_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ValLista1_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EBReg_Det4" TypeName="Datos.EBReg_Det4" StoreEntitySet="Reg_Det">
+      <EndProperty Name="EB">
+        <ScalarProperty Name="Id" ColumnName="ValLista2_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ValLista2_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EBReg_Det5" TypeName="Datos.EBReg_Det5" StoreEntitySet="Reg_Det">
+      <EndProperty Name="EB">
+        <ScalarProperty Name="Id" ColumnName="ValLista3_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ValLista3_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EBReg_Det6" TypeName="Datos.EBReg_Det6" StoreEntitySet="Reg_Det">
+      <EndProperty Name="EB">
+        <ScalarProperty Name="Id" ColumnName="ValLista4_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ValLista4_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EBReg_Det7" TypeName="Datos.EBReg_Det7" StoreEntitySet="Reg_Det">
+      <EndProperty Name="EB">
+        <ScalarProperty Name="Id" ColumnName="UM_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="UM_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Asoc_EntidadRegistro" TypeName="Datos.Persona_Reg_encab" StoreEntitySet="Reg_encab">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="EntidadRegistro_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_encab">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntidadRegistro_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaReg_encab" TypeName="Datos.PersonaReg_encab" StoreEntitySet="Reg_encab">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="EntidadEmpresa_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_encab">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntidadEmpresa_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaReg_encab1" TypeName="Datos.PersonaReg_encab1" StoreEntitySet="Reg_encab">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="EntidadResp_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_encab">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntidadResp_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaReg_encab2" TypeName="Datos.PersonaReg_encab2" StoreEntitySet="Reg_encab">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="EntidadAfectada_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_encab">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntidadAfectada_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaReg_Det" TypeName="Datos.PersonaReg_Det" StoreEntitySet="Reg_Det">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="EntidadAfectada2_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntidadAfectada2_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaReg_Det1" TypeName="Datos.PersonaReg_Det1" StoreEntitySet="Reg_Det">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="EntidadAfectada1_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntidadAfectada1_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaReg_Det2" TypeName="Datos.PersonaReg_Det2" StoreEntitySet="Reg_Det">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id" ColumnName="EntidadAfectada3_Id" />
+      </EndProperty>
+      <EndProperty Name="Reg_Det">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="EntidadAfectada3_Id" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="LGP" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModeloDatos" ZoomLevel="94" ShowGrid="true" DisplayType="true">
+        <EntityTypeShape EntityType="Datos.EB" Width="1.5" PointX="5.875" PointY="1.75" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Datos.Concepto" Width="1.5" PointX="1.25" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Datos.Entidad" Width="1.5" PointX="1" PointY="7.25" Height="1.0187792968749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Datos.Usuario" Width="1.5" PointX="7.125" PointY="11" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Datos.Reg_Det" Width="1.5" PointX="11.25" PointY="1.125" Height="6.5955208333333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Datos.Reg_encab" Width="1.5" PointX="3.25" PointY="2.75" Height="3.9033007812499996" IsExpanded="true" />
+        <AssociationConnector Association="Datos.FK_ConceptoReg_encab" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.125" PointY="1.7641910807291668" />
+          <ConnectorPoint PointX="8.375" PointY="1.7641910807291668" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.FK_Reg_encab_EB_Usuario" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.5" PointY="4.0670475260416659" />
+          <ConnectorPoint PointX="8.375" PointY="4.0670475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.FK_Reg_encabReg_Det" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.875" PointY="3.6295475260416659" />
+          <ConnectorPoint PointX="11.125" PointY="3.6295475260416659" />
+        </AssociationConnector>
+        <InheritanceConnector EntityType="Datos.Concepto" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.875" PointY="2.047841796875" />
+          <ConnectorPoint PointX="2.75" PointY="2.047841796875" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="Datos.Entidad" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.625" PointY="4.1148893229166656" />
+          <ConnectorPoint PointX="6.625" PointY="7" />
+          <ConnectorPoint PointX="4.4895858333333329" PointY="6.9999999999999991" />
+          <ConnectorPoint PointX="4.3229191666666669" PointY="7" />
+          <ConnectorPoint PointX="4.083333333333333" PointY="6.9999999999999991" />
+          <ConnectorPoint PointX="3.9166666666666665" PointY="7" />
+          <ConnectorPoint PointX="1.75" PointY="7" />
+          <ConnectorPoint PointX="1.75" PointY="7.25" />
+        </InheritanceConnector>
+        <AssociationConnector Association="Datos.Reg_encabReg_Det">
+          <ConnectorPoint PointX="4" PointY="6.65330078125" />
+          <ConnectorPoint PointX="4" PointY="7.5763557942708335" />
+          <ConnectorPoint PointX="4.3229191666666669" PointY="7.5763557942708326" />
+          <ConnectorPoint PointX="4.4895858333333329" PointY="7.5763557942708335" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="7.5763557942708326" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="7.5763557942708335" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="7.5763557942708326" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="7.5763557942708335" />
+          <ConnectorPoint PointX="8.5416666666666661" PointY="7.5763557942708326" />
+          <ConnectorPoint PointX="8.7083333333333339" PointY="7.5763557942708335" />
+          <ConnectorPoint PointX="11.25" PointY="7.5763557942708335" />
+        </AssociationConnector>
+        <InheritanceConnector EntityType="Datos.Usuario" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.75" PointY="8.268779296875" />
+          <ConnectorPoint PointX="1.75" PointY="10.625" />
+          <ConnectorPoint PointX="4.3229191666666669" PointY="10.625" />
+          <ConnectorPoint PointX="4.4895858333333329" PointY="10.625" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="10.625" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="10.625" />
+          <ConnectorPoint PointX="7.875" PointY="10.625" />
+          <ConnectorPoint PointX="7.875" PointY="11" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="Datos.Cliente" Width="1.5" PointX="4.625" PointY="13.25" Height="1.7879850260416657" />
+        <EntityTypeShape EntityType="Datos.Empleado" Width="1.5" PointX="2.625" PointY="13.375" Height="1.2110807291666657" />
+        <EntityTypeShape EntityType="Datos.Vehiculo" Width="1.5" PointX="2.375" PointY="11" Height="1.4033821614583326" />
+        <InheritanceConnector EntityType="Datos.Vehiculo" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.75" PointY="8.268779296875" />
+          <ConnectorPoint PointX="1.75" PointY="10.625" />
+          <ConnectorPoint PointX="3.125" PointY="10.625" />
+          <ConnectorPoint PointX="3.125" PointY="11" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="Datos.Cochera" Width="1.5" PointX="0.625" PointY="11" Height="1.0187792968749996" />
+        <InheritanceConnector EntityType="Datos.Cochera" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.75" PointY="8.268779296875" />
+          <ConnectorPoint PointX="1.75" PointY="10.625" />
+          <ConnectorPoint PointX="1.375" PointY="10.625" />
+          <ConnectorPoint PointX="1.375" PointY="11" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="Datos.Persona" Width="1.5" PointX="7.875" PointY="4.25" Height="2.3648893229166665" />
+        <InheritanceConnector EntityType="Datos.Persona" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.75" PointY="7.25" />
+          <ConnectorPoint PointX="1.75" PointY="7.0186979166666674" />
+          <ConnectorPoint PointX="3.9166666666666665" PointY="7.0186979166666665" />
+          <ConnectorPoint PointX="4.083333333333333" PointY="7.0186979166666674" />
+          <ConnectorPoint PointX="4.3229191666666669" PointY="7.0186979166666665" />
+          <ConnectorPoint PointX="4.4895858333333329" PointY="7.0186979166666674" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="7.0186979166666665" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="7.0186979166666674" />
+          <ConnectorPoint PointX="8.625" PointY="7.0186979166666674" />
+          <ConnectorPoint PointX="8.625" PointY="6.6148893229166665" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="Datos.Empleado" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="6.6148893229166665" />
+          <ConnectorPoint PointX="8.625" PointY="10.75" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="10.75" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="10.75" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="10.75" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="10.75" />
+          <ConnectorPoint PointX="6.875" PointY="10.75" />
+          <ConnectorPoint PointX="6.875" PointY="13" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="13" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="13" />
+          <ConnectorPoint PointX="3.375" PointY="13" />
+          <ConnectorPoint PointX="3.375" PointY="13.375" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="Datos.Cliente" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="6.6148893229166665" />
+          <ConnectorPoint PointX="8.625" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="7.2398893229166665" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="5.375" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="5.375" PointY="13.25" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="Datos.Empresa" Width="1.5" PointX="6.75" PointY="13.875" Height="1.0187792968749996" IsExpanded="true" />
+        <InheritanceConnector EntityType="Datos.Empresa" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="6.6148893229166665" />
+          <ConnectorPoint PointX="8.625" PointY="10.75" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="10.75" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="10.75" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="10.75" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="10.75" />
+          <ConnectorPoint PointX="6.875" PointY="10.75" />
+          <ConnectorPoint PointX="6.875" PointY="13.5" />
+          <ConnectorPoint PointX="7.5" PointY="13.5" />
+          <ConnectorPoint PointX="7.5" PointY="13.875" />
+        </InheritanceConnector>
+        <AssociationConnector Association="Datos.UsuarioReg_encab">
+          <ConnectorPoint PointX="7.125" PointY="12.530782877604167" />
+          <ConnectorPoint PointX="6.958333333333333" PointY="12.530782877604167" />
+          <ConnectorPoint PointX="6.791666666666667" PointY="12.530782877604167" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="12.530782877604167" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="12.530782877604167" />
+          <ConnectorPoint PointX="4.4062525" PointY="12.530782877604167" />
+          <ConnectorPoint PointX="4.4062525" PointY="6.65330078125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.PersonaUsuario">
+          <ConnectorPoint PointX="8.25" PointY="6.6148893229166665" />
+          <ConnectorPoint PointX="8.25" PointY="11" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.ConceptoReg_Det">
+          <ConnectorPoint PointX="2.75" PointY="1.40625" />
+          <ConnectorPoint PointX="11.25" PointY="1.40625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.ConceptoReg_encab" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.7500000000000004" PointY="2.34568359375" />
+          <ConnectorPoint PointX="3.25" PointY="2.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.EBReg_Det3">
+          <ConnectorPoint PointX="7.375" PointY="2.8248701985677078" />
+          <ConnectorPoint PointX="11.25" PointY="2.8248701985677078" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.EBReg_Det4">
+          <ConnectorPoint PointX="7.375" PointY="3.4248052978515617" />
+          <ConnectorPoint PointX="11.25" PointY="3.4248052978515617" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.EBReg_Det5">
+          <ConnectorPoint PointX="7.375" PointY="3.8323473103841135" />
+          <ConnectorPoint PointX="11.25" PointY="3.8323473103841135" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.EBReg_Det6">
+          <ConnectorPoint PointX="7.375" PointY="2.2249350992838539" />
+          <ConnectorPoint PointX="11.25" PointY="2.2249350992838539" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.EBReg_Det7">
+          <ConnectorPoint PointX="6.2187475" PointY="4.1148893229166656" />
+          <ConnectorPoint PointX="6.2187475" PointY="7.3263939843749988" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="7.3263939843749979" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="7.3263939843749988" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="7.3263939843749979" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="7.3263939843749988" />
+          <ConnectorPoint PointX="8.5416666666666661" PointY="7.3263939843749979" />
+          <ConnectorPoint PointX="8.7083333333333339" PointY="7.3263939843749988" />
+          <ConnectorPoint PointX="11.25" PointY="7.3263939843749988" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.Persona_Reg_encab">
+          <ConnectorPoint PointX="7.875" PointY="5.4324446614583337" />
+          <ConnectorPoint PointX="6.708333333333333" PointY="5.4324446614583328" />
+          <ConnectorPoint PointX="6.541666666666667" PointY="5.4324446614583337" />
+          <ConnectorPoint PointX="4.75" PointY="5.4324446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.PersonaReg_encab">
+          <ConnectorPoint PointX="7.875" PointY="4.7787223307291669" />
+          <ConnectorPoint PointX="6.708333333333333" PointY="4.778722330729166" />
+          <ConnectorPoint PointX="6.541666666666667" PointY="4.7787223307291669" />
+          <ConnectorPoint PointX="4.75" PointY="4.7787223307291669" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.PersonaReg_encab1">
+          <ConnectorPoint PointX="7.875" PointY="6.0861669921875006" />
+          <ConnectorPoint PointX="6.708333333333333" PointY="6.0861669921875" />
+          <ConnectorPoint PointX="6.541666666666667" PointY="6.0861669921875006" />
+          <ConnectorPoint PointX="4.75" PointY="6.0861669921875006" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.PersonaReg_encab2">
+          <ConnectorPoint PointX="7.875" PointY="5.7593058268229171" />
+          <ConnectorPoint PointX="6.708333333333333" PointY="5.7593058268229163" />
+          <ConnectorPoint PointX="6.541666666666667" PointY="5.7593058268229171" />
+          <ConnectorPoint PointX="4.75" PointY="5.7593058268229171" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.PersonaReg_Det">
+          <ConnectorPoint PointX="9.375" PointY="5.3735293626785277" />
+          <ConnectorPoint PointX="11.25" PointY="5.3735293626785277" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.PersonaReg_Det1">
+          <ConnectorPoint PointX="9.375" PointY="4.7492646813392643" />
+          <ConnectorPoint PointX="11.25" PointY="4.7492646813392643" />
+        </AssociationConnector>
+        <AssociationConnector Association="Datos.PersonaReg_Det2">
+          <ConnectorPoint PointX="9.375" PointY="6.056709342797598" />
+          <ConnectorPoint PointX="11.25" PointY="6.056709342797598" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Datos.ConfMenu" Width="1.5" PointX="10.75" PointY="8.75" Height="2.7494921874999996" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
